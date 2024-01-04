@@ -8,6 +8,7 @@ const App = () => {
   const [entry, setEntry] = useState<string>("");
   const [items, setItems] = useState<string[]>([]);
   const [checked, setChecked] = useState<boolean>(false);
+  const [style, setStyle] = useState<{}>({})
 
 
   const handleButtonClick = (event:MouseEvent<HTMLButtonElement>) => {
@@ -26,27 +27,40 @@ const App = () => {
   }
 
   const handleListItemButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
-     const itemName = event.currentTarget.previousSibling?.textContent;
+     let currentItemName: string = "";
+    const itemName = event.currentTarget.previousSibling;
+    if(itemName && itemName.textContent !== null){
+      currentItemName = itemName.textContent;
+    }
        setItems(items.filter(item => {
-        if(item !== itemName){
+        if(item !== currentItemName){
           return item
         }
       })) 
   };
 
   const handleCheckChange = (event: ChangeEvent<HTMLInputElement>) => {
+    let currentItem: string = "";
+    const currentEntry = event.currentTarget.nextSibling;
+    if(currentEntry && currentEntry.textContent !== null){
+      currentItem = currentEntry.textContent;
+    }
+
+
     const newChecked = !checked;
     setChecked(newChecked);
 
     if(newChecked){
-
+      setStyle({"textDecoration": "line-through"})
+    } else {
+      setStyle({})
     }
   }
 
   return (
     <div className="app">
     <Header handleButtonClick={handleButtonClick} />
-    <Main items={items} entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange} handleListItemButtonClick={handleListItemButtonClick} handleCheckChange={handleCheckChange} checked={checked}/>
+    <Main items={items} entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange} handleListItemButtonClick={handleListItemButtonClick} handleCheckChange={handleCheckChange} checked={checked} style={style}/>
     </div>
   )
 };

@@ -6,6 +6,7 @@ import { ChangeEventHandler, MouseEventHandler } from "react";
 type MainProps = {
     entry: string;
     items: string[];
+    style: object;
     handleListButtonClick: MouseEventHandler<HTMLButtonElement>;
     handleListItemButtonClick: MouseEventHandler<HTMLButtonElement>;
     handleChange: ChangeEventHandler<HTMLInputElement>;
@@ -13,13 +14,13 @@ type MainProps = {
     checked: boolean;
 }
 
-const Main = ({ entry, items, handleListButtonClick, handleListItemButtonClick, handleChange, handleCheckChange, checked }: MainProps) => {
+const Main = ({ entry, items, style, handleListButtonClick, handleListItemButtonClick, handleChange, handleCheckChange, checked }: MainProps) => {
     
 
     return (
     <>
     <Textbox name="todo-list" placeholder="Add your task here..." entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange} />
-    <List items={items} handleListItemButtonClick={handleListItemButtonClick} handleCheckChange={handleCheckChange} checked={checked}/>
+    <List items={items} handleListItemButtonClick={handleListItemButtonClick} handleCheckChange={handleCheckChange} checked={checked} style={style}/>
     </>
     )
 };
