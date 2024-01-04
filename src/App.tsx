@@ -1,10 +1,14 @@
 import "./App.scss";
+import Header from "./components/Header/Header";
 
 const App = () => {
+
+  const handleButtonClick = () => {
+
+  }
+  
   return (
-    <div>
-      
-    </div>
+    <Header handleButtonClick={handleButtonClick}/>
   )
 };
 
