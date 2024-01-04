@@ -10,10 +10,10 @@ const App = () => {
 
 
   const handleButtonClick = (event:MouseEvent<HTMLButtonElement>) => {
-
+    setItems([])
   };
 
-  const handleListButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleListButtonClick = () => {
     const newItem = entry;
     setItems([...items, newItem])
     setEntry("")
@@ -25,10 +25,14 @@ const App = () => {
     setEntry(newItem);
   }
 
+  const handleListItemButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
+    
+  };
+
   return (
     <div className="app">
     <Header handleButtonClick={handleButtonClick} />
-    <Main items={items} entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange}/>
+    <Main items={items} entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange} handleListItemButtonClick={handleListItemButtonClick}/>
     </div>
   )
 };
