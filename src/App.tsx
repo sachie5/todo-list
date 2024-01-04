@@ -46,14 +46,14 @@ const App = () => {
       currentItem = currentEntry.textContent;
     }
 
-     const newChecked = !checked;
+    const newChecked = !checked;
     setChecked(newChecked);
-
+/* 
     if(newChecked){
       setStyle({"textDecoration": "line-through"})
     } else {
       setStyle({})
-    }
+    } */
   }
 
   return (

@@ -12,7 +12,7 @@ const Header = ({ handleButtonClick }: HeaderProps) => {
     <>
     <header className="header">
     <h1 className="header__heading">My Todos</h1>
-    <Button name="reset" handleButtonClick={handleButtonClick}/>
+    <Button name="Reset" handleButtonClick={handleButtonClick}/>
     </header>
     </>
    )
