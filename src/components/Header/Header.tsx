@@ -10,8 +10,10 @@ type HeaderProps = {
 const Header = ({ handleButtonClick }: HeaderProps) => {
    return (
     <>
-    <h1>My Todos</h1>
+    <header className="header">
+    <h1 className="header__heading">My Todos</h1>
     <Button name="reset" handleButtonClick={handleButtonClick}/>
+    </header>
     </>
    )
 };
