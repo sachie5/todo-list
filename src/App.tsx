@@ -46,8 +46,7 @@ const App = () => {
       currentItem = currentEntry.textContent;
     }
 
-
-    const newChecked = !checked;
+     const newChecked = !checked;
     setChecked(newChecked);
 
     if(newChecked){

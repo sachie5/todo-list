@@ -12,7 +12,7 @@ type ListProps = {
 
 const List = ({items, style, handleListItemButtonClick, handleCheckChange, checked}: ListProps) => {
 
-    if(!items) return <p>Nothing to see here yet...Add a task in the field above!</p>
+    if(!items || items.length === 0) return <p>Nothing to see here yet...Add a task in the field above!</p>
 
     return (
         <div className="list">
