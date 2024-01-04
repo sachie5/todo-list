@@ -26,8 +26,10 @@ const App = () => {
   }
 
   return (
-    <><Header handleButtonClick={handleButtonClick} />
-    <Main items={items} entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange}/></>
+    <div className="app">
+    <Header handleButtonClick={handleButtonClick} />
+    <Main items={items} entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange}/>
+    </div>
   )
 };
 

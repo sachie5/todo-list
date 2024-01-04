@@ -1,13 +1,28 @@
+@use "../../assets/styles/variables" as *;
+
 .list{
     padding: 10px;
 
     &__item{
         display: flex;
         justify-content: space-around;
+        align-items: center;
         border: 2px solid black;
         border-radius: 20px;
         padding: 10px;
         margin: 10px;
+    }
+
+    &__description{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    &__button{
+        height: 2rem;
+        font-size: 15px;
+        background-color: white;
+        border: none;
     }
 
 }

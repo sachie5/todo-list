@@ -1,6 +1,9 @@
+@use "../../assets/styles/variables" as *;
+
 .header{
 
     &__button{
         height: 40px;
+        font-family: $font-body;
     }
 }
