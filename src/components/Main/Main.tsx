@@ -9,15 +9,17 @@ type MainProps = {
     handleListButtonClick: MouseEventHandler<HTMLButtonElement>;
     handleListItemButtonClick: MouseEventHandler<HTMLButtonElement>;
     handleChange: ChangeEventHandler<HTMLInputElement>;
+    handleCheckChange: ChangeEventHandler<HTMLInputElement>;
+    checked: boolean;
 }
 
-const Main = ({ entry, items, handleListButtonClick, handleListItemButtonClick, handleChange }: MainProps) => {
+const Main = ({ entry, items, handleListButtonClick, handleListItemButtonClick, handleChange, handleCheckChange, checked }: MainProps) => {
     
 
     return (
     <>
     <Textbox name="todo-list" placeholder="Add your task here..." entry={entry} handleListButtonClick={handleListButtonClick} handleChange={handleChange} />
-    <List items={items} handleListItemButtonClick={handleListItemButtonClick}/>
+    <List items={items} handleListItemButtonClick={handleListItemButtonClick} handleCheckChange={handleCheckChange} checked={checked}/>
     </>
     )
 };
