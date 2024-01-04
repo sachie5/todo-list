@@ -10,7 +10,8 @@ const List = ({items}: ListProps) => {
 
     return (
         <div className="list">
-           {items.map(item => <div className="list__item" key={item}>
+           {items.map(item => 
+           <div className="list__item" key={item}>
                 <input className="list__input" type="checkbox" name={item}  value={item}></input>
                 <p className="list__description">{item}</p>
                 <button className="list__button">x</button>
